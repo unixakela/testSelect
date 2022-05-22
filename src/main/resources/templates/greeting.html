@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Getting Started: Serving Web Content</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<p th:text="'Hello, ' + ${name} + '!'" />
+<form th:action="@{/greeting}" th:object="${selectform}" method =  "post">
+  <select name = "selectid">
+    <option th:each="selct : ${selectClasses}"
+            th:value="${selct.id}"
+            th:text="${selct.name}"
+            th:selected="${selct.selected}">
+
+    </option>
+  </select>>
+  <input type="submit" value="select"/>
+</form>
+</body>
+</html>
